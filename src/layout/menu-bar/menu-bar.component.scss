@@ -1,0 +1,48 @@
+.mat-toolbar {
+  height: 100px;
+  background-color: #004f4f;
+  color: azure;
+  font-size: 40px;
+}
+.navbar-toggle {
+  color: azure;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+}
+
+.navBar-Links {
+
+  @media screen and (min-width: 900px) {
+    display: block;
+  }
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+  position: absolute;
+  right: 0;
+}
+
+.navBar-Title {
+  padding-left: 20px;
+  text-decoration: none;
+  color: azure;
+  font-family: monospace;
+}
+
+.navBar-Links-Item {
+  font-size: 20px;
+  font-style: unset;
+  padding-right: 30px;
+  top: 40px;
+  text-decoration: none !important;
+  color: azure;
+}
+
+.navBar-MenuLinks-Item {
+  text-decoration: none !important;
+}

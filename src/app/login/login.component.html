@@ -1,0 +1,31 @@
+<div class="login-body">
+  <mat-card style="margin-bottom: 20px;">
+    <mat-card-title>{{ loginCreate }}</mat-card-title>
+    <mat-card-content>
+      <mat-form-field class="username">
+        <mat-label>Nome de Usuário</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-form-field class="password">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide() ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="clickEvent($event)"
+          [attr.aria-label]="'Esconder Senha'"
+          [attr.aria-pressed]="hide()"
+        >
+          <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <button mat-fab extended>
+        Fazer Login
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>

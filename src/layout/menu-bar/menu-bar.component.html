@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <button [matMenuTriggerFor]="menu"
+    mat-icon-button
+    class="navbar-toggle"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <a href="/market" class="navBar-MenuLinks-Item">
+      <button mat-menu-item>Mercado</button>
+    </a>
+    <a href="/about" class="navBar-MenuLinks-Item">
+      <button mat-menu-item>Sobre</button>
+    </a>
+    <a href="/portfolio" class="navBar-MenuLinks-Item">
+      <button mat-menu-item>Carteira</button>
+    </a>
+    <a href="/login" class="navBar-MenuLinks-Item">
+      <button mat-menu-item>Login</button>
+    </a>
+  </mat-menu>
+  <a href="/">
+    <img src="assets/img/smart-stocks-3-transparent.png" style="width: 95px; opacity: 1;"/>
+  </a>
+  <span class="toolbar-spacer"></span>
+  <a href="/" style="text-decoration: none;">
+    <span class="navBar-Title">Smart Stocks</span>
+  </a>
+  <div class="navBar-Links">
+    <a href="/market" class="navBar-Links-Item">
+      <span>Mercado</span>
+    </a>
+    <a href="/about" class="navBar-Links-Item">
+      <span>Sobre</span>
+    </a>
+    <a href="/portfolio" class="navBar-Links-Item">
+      <span>Carteira</span>
+    </a>
+    <a href="/login" class="navBar-Links-Item">
+      <span>Login</span>
+    </a>
+  </div>
+</mat-toolbar>

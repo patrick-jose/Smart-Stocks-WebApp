@@ -1,0 +1,44 @@
+.background-image-home {
+  width: 99,5vw;
+  display: grid;
+  flex-direction: row;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+}
+
+.image-home {
+  background-image: url("../../assets/img/rawpixel-com-252130-1200x801.jpg");
+  height: calc(100vh -  100px);
+  opacity: 0.9;
+}
+
+.image-home-about {
+  background-image: linear-gradient(to bottom right, #004f4f, azure, #349eeb);
+  height: calc(100vh);
+}
+
+.image-home-about-authors {
+  opacity: 0.8;
+  background-image: url("../../assets/img/dreamstime_xxl_154771088-1-scaled.jpg");
+  height: calc(100vh);
+}
+
+.presentation-text {
+  font-size: 40px;
+  text-align: center;
+  color: azure;
+  text-decoration: none;
+  width: 70%;
+  background-color: rgb(0, 0, 0, .5);
+  top: 30%;
+  position: relative;
+}
+
+.mdc-fab {
+  background-color: #bbeded;
+  width: 230px;
+  height: 100px;
+  font-size: 25px;
+  color: black;
+}
