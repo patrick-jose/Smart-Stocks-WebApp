@@ -42,7 +42,9 @@
   background-color: rgb(99, 205, 224, 0.3);
   border-radius: 100px;
   padding: 70px;
-  font-weight: 200 ;
+  font-weight: 400;
+  color: black;
+  opacity: 0.9;
 }
 
 .image-home-about li {
@@ -69,7 +71,7 @@
   text-decoration: none;
   background-color: rgb(0, 0, 0, 0.4);
   position: relative;
-  font-weight: 300;
+  font-weight: 500;
   border-radius: 15px;
   @media screen and (min-width: 1300px) {
     padding: 20px;
@@ -97,19 +99,19 @@
 }
 
 .image-home-about-authors p {
-  font-size: 25px;
-  width: 70%;
-  background-color: rgb(99, 205, 224, 0.6);
+  font-size: 20px;
+  width: 80%;
+  background-color: rgb(99, 205, 224, 0.4);
   line-height: 30px;
-  font-weight: 200;
+  font-weight: 400;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   color: black;
   margin-top: 300px;
 }
 
 .image-home-about-authors a {
   text-decoration: none;
-  color: #004f4f;
+  color: aqua;
   font-weight: bold;
 }
