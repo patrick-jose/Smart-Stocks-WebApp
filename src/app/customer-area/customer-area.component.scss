@@ -1,13 +1,18 @@
 table {
-  //margin: 5%;
+  @media screen and (min-width: 1800px) and (min-height: 700px) {
+    margin-top: 50px;
+  }
 }
 
 .container {
-  overflow: auto;
-  //padding: 10px;
   width: 100%;
   display: flex;
-  height: calc(100vh -  100px);
+  @media screen and (min-width: 1800px) and (min-height: 700px) {
+    height: calc(100vh -  200px);
+  }
+  @media screen and (max-width: 1800px) {
+    height: calc(120vh);
+  }
   align-items: center;
 }
 
