@@ -1,4 +1,60 @@
 .footer {
+  @media screen and (min-width: 1300px) {
+    height: 150px;
+  }
+  @media screen and (max-width: 1300px) {
+    height: 250px;
+  }
   background-color: #041c1c;
-  height: 150px;
+  padding: 10px;
+}
+
+.footer-left {
+  font-size: 15px;
+  color: azure;
+  @media screen and (min-width: 1300px) {
+    position: absolute;
+    left: 10%;
+    float: left;
+  }
+  @media screen and (max-width: 1300px) {
+    padding-top: 10px;
+  }
+}
+
+.footer-right {
+  font-size: 15px;
+  color: azure;
+  @media screen and (min-width: 1300px) {
+    position: absolute;
+    right: 1%;
+    float: right;
+    padding-right: 20%;
+  }
+  @media screen and (max-width: 1300px) {
+    padding-top: 20px;
+  }
+}
+
+span {
+  @media screen and (min-width: 1300px) {
+    padding: 20px;
+  }
+  @media screen and (max-width: 1300px) {
+    padding: 10px;
+  }
+  font-weight: 100;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+p {
+  font-weight: 900;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
 }
