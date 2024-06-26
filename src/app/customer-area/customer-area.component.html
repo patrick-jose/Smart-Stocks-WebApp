@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="chart">
+    <mat-card>
+      <mat-card-header>Panorama da Carteira</mat-card-header>
+      <mat-card-content>
+        <canvas id="canvas">{{chart}}</canvas>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="portfolioSummary">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="allocation">
+        <th mat-header-cell *matHeaderCellDef> Alocação % </th>
+        <td mat-cell *matCellDef="let element"> {{element.allocation}}% </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nome do Ativo </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Tipo de Ativo </th>
+        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+      </ng-container>
+      <ng-container matColumnDef="riskProfile">
+        <th mat-header-cell *matHeaderCellDef> Risco </th>
+        <td mat-cell *matCellDef="let element"> {{element.riskProfile}} </td>
+      </ng-container>
+      <ng-container matColumnDef="benchmarkName">
+        <th mat-header-cell *matHeaderCellDef> Benchmark</th>
+        <td mat-cell *matCellDef="let element"> {{element.benchmarkName ?? 'Não se Aplica'}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsSummary"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsSummary;"></tr>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+  <div class="portfolioFull">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="allocation">
+        <th mat-header-cell *matHeaderCellDef> Alocação % </th>
+        <td mat-cell *matCellDef="let element"> {{element.allocation}}% </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nome do Ativo </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Tipo de Ativo </th>
+        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+      </ng-container>
+      <ng-container matColumnDef="riskProfile">
+        <th mat-header-cell *matHeaderCellDef> Risco </th>
+        <td mat-cell *matCellDef="let element"> {{element.riskProfile}} </td>
+      </ng-container>
+      <ng-container matColumnDef="benchmarkName">
+        <th mat-header-cell *matHeaderCellDef> Benchmark</th>
+        <td mat-cell *matCellDef="let element"> {{element.benchmarkName ?? 'Não se Aplica'}} </td>
+      </ng-container>
+      <ng-container matColumnDef="profitabilityDay">
+        <th mat-header-cell *matHeaderCellDef> Rentabilidade Dia </th>
+        <td mat-cell *matCellDef="let element"> {{element.profitabilityDay}}% </td>
+      </ng-container>
+      <ng-container matColumnDef="profitabilityMonth">
+        <th mat-header-cell *matHeaderCellDef> Rentabilidade Mês </th>
+        <td mat-cell *matCellDef="let element"> {{element.profitabilityMonth}}% </td>
+      </ng-container>
+      <ng-container matColumnDef="profitability12Months">
+        <th mat-header-cell *matHeaderCellDef> Rentabilidade 12 Meses </th>
+        <td mat-cell *matCellDef="let element"> {{element.profitability12Months}}% </td>
+      </ng-container>
+      <ng-container matColumnDef="profitabilityTotal">
+        <th mat-header-cell *matHeaderCellDef> Rentabilidade Total </th>
+        <td mat-cell *matCellDef="let element"> {{element.profitabilityTotal}}% </td>
+      </ng-container>
+      <ng-container matColumnDef="profitabilityBenchmark">
+        <th mat-header-cell *matHeaderCellDef> Rentabilidade Benchmark </th>
+        <td mat-cell *matCellDef="let element"> {{element.profitabilityBenchmark}}% </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsFull"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsFull;"></tr>
+    </table>
+  </div>
+</div>

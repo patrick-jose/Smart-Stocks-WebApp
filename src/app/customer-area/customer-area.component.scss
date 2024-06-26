@@ -1,0 +1,52 @@
+table {
+  //margin: 5%;
+}
+
+.container {
+  overflow: auto;
+  //padding: 10px;
+  width: 100%;
+  display: flex;
+  height: calc(100vh -  100px);
+  align-items: center;
+}
+
+.chart {
+  float: left;
+  width: 900px;
+  margin: 0px 0px 0px 60px;
+}
+
+.portfolioSummary {
+  margin: 0px 60px 0px 60px;
+  width: 70%;
+  @media screen and (min-width: 900px) {
+
+  }
+  @media screen and (max-width: 900px) {
+
+  }
+}
+
+.mat-mdc-header-row {
+  background-color: azure;
+}
+
+.portfolioFull {
+  margin: 0px 60px 0px 60px;
+  width: 100%;
+  height: calc(80vh);
+}
+
+#canvas {
+  padding: 40px;
+}
+
+.mat-mdc-table {
+  //min-width: 0;
+  width: 100%;
+  @media screen and (min-width: 900px) {
+  }
+  @media screen and (max-width: 200px) {
+  }
+}
