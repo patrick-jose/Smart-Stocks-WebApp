@@ -23,7 +23,6 @@ export class MarketComponent implements OnInit{
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    console.log(this.news);
     this.GetRssFeedData();
   }
 
@@ -67,8 +66,6 @@ export class MarketComponent implements OnInit{
         });
       }
     }
-
-    console.log(this.news);
   }
 }
 export interface IRssData {}
