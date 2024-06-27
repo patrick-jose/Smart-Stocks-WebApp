@@ -11,10 +11,10 @@
   background-image: url("../../assets/img/rawpixel-com-252130-1200x801.jpg");
   opacity: 0.9;
   @media screen and (min-width: 1300px) {
-    height: calc(100vh -  100px);
+    height: 100vh;
   }
   @media screen and (max-width: 1300px) {
-    height: calc(100vh -  100px);
+    height: 100vh;
   }
 }
 

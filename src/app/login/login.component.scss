@@ -1,7 +1,6 @@
 :host {
   display: flex;
   justify-content: center;
-  margin: 100px 0px;
 }
 
 .mat-form-field {
@@ -81,7 +80,7 @@ input.example-right-align {
   background-position: center;
   background-size: cover;
   place-items: center;
-  height: calc(100vh -  300px);
+  height: 100vh;
 }
 
 .mdc-fab {
