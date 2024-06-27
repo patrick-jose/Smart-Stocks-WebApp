@@ -1,0 +1,93 @@
+<div class="container">
+  <mat-stepper headerPosition="bottom" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Qual é o seu objetivo?</ng-template>
+        <mat-form-field>
+          <mat-label>Objetivo?</mat-label>
+          <input matInput placeholder="Viagem pra Disney" formControlName="firstCtrl">
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Próximo Passo</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Renda/Capital atual</ng-template>
+
+        <mat-grid-list cols="2" rowHeight="2:1">
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Quanto tempo?</mat-label>
+              <input matInput placeholder="9" formControlName="secondCtrl">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile style="margin-left: 20px; width: 100px !important;">
+            <mat-form-field>
+              <mat-label>Tempo</mat-label>
+              <mat-select>
+                @for (term of terms; track term) {
+                  <mat-option [value]="term.value">{{term.viewValue}}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-form-field>
+          <mat-label>Capital inicial</mat-label>
+          <span matTextPrefix>R$ &nbsp;&nbsp;&nbsp;</span>
+          <input matInput placeholder="10.000,00" formControlName="secondCtrl">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Aporte mensal</mat-label>
+          <span matTextPrefix>R$ &nbsp;&nbsp;&nbsp;</span>
+          <input matInput placeholder="500,00" formControlName="secondCtrl">
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Passo Anterior</button>
+          <button mat-button matStepperNext>Próximo Passo</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>O quanto você sabe sobre investimentos?</ng-template>
+      <p>Estou disposto a aceitar riscos acima da média para obter retornos acima da média.</p>
+      <mat-radio-group aria-label="Selecione uma opção">
+        <mat-radio-button value="1"><span>Discordo totalmente</span></mat-radio-button>
+        <mat-radio-button value="2"><span>Concordo totalmente</span></mat-radio-button>
+      </mat-radio-group>
+      <p>Prefiro manter um investimento em vez de vendê-lo, mesmo que eu espere que ele se recupere nos próximos 12 meses, mesmo que tenha perdido valor no último ano.</p>
+      <mat-radio-group aria-label="Selecione uma opção">
+        <mat-radio-button value="1"><span>Discordo totalmente</span></mat-radio-button>
+        <mat-radio-button value="2"><span>Concordo totalmente</span></mat-radio-button>
+      </mat-radio-group>
+      <p>Me sinto confortável investindo no mercado de ações.</p>
+      <mat-radio-group aria-label="Selecione uma opção">
+        <mat-radio-button value="1"><span>Discordo totalmente</span></mat-radio-button>
+        <mat-radio-button value="2"><span>Concordo totalmente</span></mat-radio-button>
+      </mat-radio-group>
+      <p>Estou bem informado sobre investimentos e finanças pessoais.</p>
+      <mat-radio-group aria-label="Selecione uma opção">
+        <mat-radio-button value="1"><span>Discordo totalmente</span></mat-radio-button>
+        <mat-radio-button value="2"><span>Concordo totalmente</span></mat-radio-button>
+      </mat-radio-group>
+      <p>Consideraria investir em commodities e investimentos alternativos.</p>
+      <mat-radio-group aria-label="Selecione uma opção">
+        <mat-radio-button value="1"><span>Discordo totalmente</span></mat-radio-button>
+        <mat-radio-button value="2"><span>Concordo totalmente</span></mat-radio-button>
+      </mat-radio-group>
+
+<p style="display: none;">Conservador: 5 a 10 pontos
+Moderado: 11 a 20 pontos
+Agressivo: 21 a 25 pontos
+</p>
+      <div style="margin-top: 30px;">
+        <button mat-button matStepperPrevious>Passo Anterior</button>
+        <button mat-button (click)="stepper.reset()">Refazer</button>
+        <button mat-button routerLink="/area-do-cliente">Montar sua carteira!</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

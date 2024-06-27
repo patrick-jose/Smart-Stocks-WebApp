@@ -38,3 +38,37 @@ $Smart-Stocks-WebApp-theme: mat.define-theme((
 
 html, body { height: 100%; scroll-behavior: smooth; }
 body { margin: 0; font-family: "Lato", sans-serif }
+
+.mat-horizontal-stepper-header-container {
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100% !important;
+}
+
+.mat-horizontal-content-container {
+  width: 640px;
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+}
+
+.mdc-button__label {
+  //font-size: 20px;
+}
+
+.mat-mdc-form-field {
+  //width: 700px !important;
+}
+
+.mat-mdc-form-field-flex {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  box-sizing: border-box !important;
+  //width: 350px !important;
+}
+
+.mat-mdc-form-field-has-icon-suffix {
+  //width: 400px !important;
+  align-items: left;
+}

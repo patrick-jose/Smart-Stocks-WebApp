@@ -16,6 +16,18 @@ table {
   align-items: center;
 }
 
+.container-2 {
+  width: 100%;
+  display: flex;
+  @media screen and (min-width: 1800px) and (min-height: 700px) {
+    height: 100vh;
+  }
+  @media screen and (max-width: 1800px) {
+    height: 120vh;
+  }
+  align-items: center;
+}
+
 .chart {
   float: left;
   width: 900px;

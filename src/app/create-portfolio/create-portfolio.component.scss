@@ -1,0 +1,75 @@
+.container {
+  text-align: center;
+
+  @media screen and (min-width: 1600px) and (min-height: 1000px) {
+    height: calc(100vh - 100px);
+    align-items: center;
+    display: flex;
+  }
+  @media screen and (max-width: 1600px) {
+    height: 120vh;
+    align-items: normal !important;
+    display: flex;
+  }
+}
+
+mat-stepper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../../assets/img/GettyImages-617563676-2400x1440.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+
+  @media screen and (min-width: 1600px) and (min-height: 1000px) {
+    align-items: center;
+    display: grid;
+  }
+  @media screen and (max-width: 1600px) {
+    align-items: normal !important;
+    display: grid;
+  }
+}
+
+mat-step {
+  padding: 100px;
+}
+
+span {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.mdc-fab {
+  font-size: 20px;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+p {
+  font-size: 19px;
+  text-align: center;
+  font-weight: 400;
+  color: darkturquoise;
+  background-color: rgba(4, 28, 28, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+mat-form-field {
+  width: 600px;
+}
