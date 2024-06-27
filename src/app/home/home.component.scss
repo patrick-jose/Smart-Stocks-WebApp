@@ -35,7 +35,7 @@
 }
 
 .image-home-about ul {
-  font-size: 25px;
+  font-size: 20px;
   width: 50%;
   line-height: 40px;
   color: midnightblue;
@@ -102,13 +102,14 @@
 .image-home-about-authors p {
   font-size: 20px;
   width: 80%;
-  background-color: rgb(252, 252, 252, 0.4);
+  background-color: rgb(252, 252, 252, 0.7);
   line-height: 30px;
   font-weight: 400;
   padding: 20px;
   border-radius: 10px;
   color: black;
   margin-top: 300px;
+  border-style: outset;
 }
 
 .image-home-about-authors a {
