@@ -5,18 +5,21 @@ table {
 }
 
 .container {
+  background-image: linear-gradient(to bottom, rgb(0, 79, 79, 0.3), rgb(240, 255, 255, 0.3), rgb(52, 159, 235, 0.3), rgb(0, 255, 255, 0.3));
   width: 100%;
   display: flex;
+  height: calc(100vh -  200px);
   @media screen and (min-width: 1800px) and (min-height: 700px) {
     height: calc(100vh -  200px);
   }
   @media screen and (max-width: 1800px) {
-    height: calc(120vh);
+    height: 120vh;
   }
   align-items: center;
 }
 
 .container-2 {
+  background-image: linear-gradient(to top, rgb(0, 79, 79, 0.3), rgb(240, 255, 255, 0.3), rgb(52, 159, 235, 0.3), rgb(0, 255, 255, 0.3));
   width: 100%;
   display: flex;
   @media screen and (min-width: 1800px) and (min-height: 700px) {
@@ -30,7 +33,7 @@ table {
 
 .chart {
   float: left;
-  width: 900px;
+  width: 50%;
   margin: 0px 0px 0px 60px;
 }
 
