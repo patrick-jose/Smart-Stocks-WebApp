@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, NgZone } from '@angular/core';
+import { AfterViewInit, Component, Inject, NgZone } from '@angular/core';
 import Chart from 'chart.js/auto';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { PortfolioService } from '../shared/services/portfolio.service';
 import { Portfolio } from '../model/portfolio';
 import { DataChart } from '../model/dataChart';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-customer-area',
@@ -41,7 +41,7 @@ export class CustomerAreaComponent implements AfterViewInit {
   dataChart: any;
   chart: any = [];
 
-  constructor(private portfolioService: PortfolioService, private ngZone: NgZone) {
+  constructor(private portfolioService: PortfolioService, private ngZone: NgZone, @Inject(DOCUMENT) private document: Document) {
     this.portfolioService.getPortfolio().subscribe(result => {
       this.portfolioComposition = result;
       if (this.portfolioComposition.length > 0) {
@@ -60,6 +60,18 @@ export class CustomerAreaComponent implements AfterViewInit {
   }
 
   initializeChart(): void {
+    const canvas = this.document.getElementById('canvas') as HTMLCanvasElement;
+    if (!canvas) {
+      console.error('Canvas element with id "canvas" not found.');
+      return;
+    }
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) {
+      console.error('Failed to get 2D context from canvas element.');
+      return;
+    }
+
     this.chart = new Chart('canvas', {
       type: 'pie',
       data: this.dataChart,
