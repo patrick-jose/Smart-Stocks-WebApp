@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './customer-area.component.html',
   styleUrl: './customer-area.component.scss'
 })
-export class CustomerAreaComponent implements AfterViewInit {
+export class CustomerAreaComponent {
 
   displayedColumnsSummary: string[] =
   [
@@ -53,12 +53,6 @@ export class CustomerAreaComponent implements AfterViewInit {
 
     this.dataChart = this.calculateAllocationsByType(this.portfolioComposition);
 
-    this.chart = new Chart(document.getElementById('canvas'), {
-      type: 'pie',
-      data: this.dataChart,
-    })
-  }
-  ngAfterViewInit(): void {
     this.chart = new Chart('canvas', {
       type: 'pie',
       data: this.dataChart,
