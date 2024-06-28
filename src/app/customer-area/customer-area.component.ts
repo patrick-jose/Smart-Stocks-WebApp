@@ -1,12 +1,10 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import Chart from 'chart.js/auto'
+import { AfterViewInit, Component, NgZone } from '@angular/core';
+import Chart from 'chart.js/auto';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { PortfolioService } from '../shared/services/portfolio.service';
 import { Portfolio } from '../model/portfolio';
-import { HttpClient } from '@angular/common/http';
 import { DataChart } from '../model/dataChart';
-import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,12 +12,11 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [ MatTableModule, MatCardModule, CommonModule ],
   templateUrl: './customer-area.component.html',
-  styleUrl: './customer-area.component.scss'
+  styleUrls: ['./customer-area.component.scss']
 })
-export class CustomerAreaComponent {
+export class CustomerAreaComponent implements AfterViewInit {
 
-  displayedColumnsSummary: string[] =
-  [
+  displayedColumnsSummary: string[] = [
     'allocation',
     'name',
     'type',
@@ -27,8 +24,7 @@ export class CustomerAreaComponent {
     'benchmarkName'
   ];
 
-  displayedColumnsFull: string[] =
-  [
+  displayedColumnsFull: string[] = [
     'allocation',
     'name',
     'type',
@@ -39,24 +35,35 @@ export class CustomerAreaComponent {
     'profitabilityMonth',
     'profitability12Months',
     'profitabilityTotal',
-
   ];
 
   portfolioComposition: Portfolio[] = [];
-
-  dataChart: DataChart;
-
+  dataChart: any;
   chart: any = [];
 
-  constructor(private portfolioService: PortfolioService) {
-    this.portfolioService.getPortfolio().subscribe(result => this.portfolioComposition = result);
+  constructor(private portfolioService: PortfolioService, private ngZone: NgZone) {
+    this.portfolioService.getPortfolio().subscribe(result => {
+      this.portfolioComposition = result;
+      if (this.portfolioComposition.length > 0) {
+        this.dataChart = this.calculateAllocationsByType(this.portfolioComposition);
 
-    this.dataChart = this.calculateAllocationsByType(this.portfolioComposition);
+        // Run chart initialization inside Angular's zone
+        this.ngZone.run(() => {
+          this.initializeChart();
+        });
+      }
+    });
+  }
 
+  ngAfterViewInit(): void {
+    // Chart initialization is handled in the subscription callback now
+  }
+
+  initializeChart(): void {
     this.chart = new Chart('canvas', {
       type: 'pie',
       data: this.dataChart,
-    })
+    });
   }
 
   calculateAllocationsByType(portfolio: Portfolio[]): DataChart {
