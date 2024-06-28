@@ -22,7 +22,7 @@
 .image-home-about {
   background-image: linear-gradient(to bottom right, #004f4f, azure, #349eeb);
   @media screen and (min-width: 1300px) and (min-height: 1000px){
-    height: calc(100vh);
+    height: 93vh;
   }
   @media screen and (max-width: 1300px) {
     height: calc(200vh);
@@ -58,7 +58,7 @@
   opacity: 0.8;
   background-image: url("../../assets/img/dreamstime_xxl_154771088-1-scaled.jpg");
   @media screen and (min-width: 1300px) and (min-height: 1000px) {
-    height: calc(100vh);
+    height: 93vh;
   }
   @media screen and (max-width: 1300px) {
     height: calc(200vh);
